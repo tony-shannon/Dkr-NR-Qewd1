@@ -5,6 +5,8 @@ services:
      container_name: nodered1
      ports: 
       - "1880:1880"
+     volumes:
+      - ./NRdata:/data
 
   qewd:
     build: ./qewd1
