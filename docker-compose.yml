@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nodered:
+     image: nodered/node-red
+     container_name: nodered1
+     ports: 
+      - "1880:1880"
+
+  qewd:
+    build: ./qewd1
+    container_name: qewd2
+    ports:
+      - "3030:8080"

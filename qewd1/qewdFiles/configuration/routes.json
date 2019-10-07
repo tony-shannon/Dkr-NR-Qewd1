@@ -1,0 +1,7 @@
+[
+    {
+      "uri": "/api/helloworld",
+      "method": "GET",
+      "handler": "helloworld"
+    }
+  ]
