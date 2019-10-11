@@ -1,51 +1,48 @@
-var db_post = require('./post');
+//console.log("Running inside Qewd on Docker Container on Node");
+var test1 = require('./users.js');
+
 
 module.exports = function(args, finished) {
-  finished(db_post.call(this, 'Documents', args.documentName, args.req.body));
-};
 
 
-/// to be moved to ./post.js file
+   var arx_documentName = "RAdb"; // should come in as arg and come out of here
+   var arx_docSubName = "users";     // should come in as arg and come out of here
+   
+   var arx_body = {
+        "id": 2, // should come in as arg and come out of here
+        "name": "Ervin Howell",
+        "username": "Antonette",
+        "email": "Shanna@melissa.tv",
+        "address": {
+          "street": "Victor Plains",
+          "suite": "Suite 879",
+          "city": "Wisokyburgh",
+          "zipcode": "90566-7771",
+          "geo": {
+            "lat": "-43.9509",
+            "lng": "-34.4618"
+          }
+        },
+        "phone": "010-692-6593 x09125",
+        "website": "anastasia.net",
+        "company": {
+          "name": "Deckow-Crist",
+          "catchPhrase": "Proactive didactic contingency",
+          "bs": "synergize scalable supply-chains"
+        }
+      }
 
-var traverse = require('traverse');
+  var iDN = 3;
 
-function isEmptyObject(obj) {
-  for (var prop in obj) {
-    return false;
-  }
-  return true;
-}
 
-function isInt(value) {
-  return !isNaN(value) && parseInt(Number(value)) == value && !isNaN(parseInt(value, 10));
-}
+   var jsonIn = {
+      "key1": "String1",
+      "key2": 42,
+      "key3": false
 
-module.exports = function(documentName, docSubName, body) {
+   }
 
-  if (typeof docSubName === 'undefined' || docSubName === '') {
-    return {error: 'Document name not defined or empty'};
-  }
-  if (typeof body === 'undefined' || body === '' || isEmptyObject(body)) {
-    return {error: 'Document Content (body) not defined or empty'};
-  }
-  var doc = this.db.use(documentName, docSubName);
-  var id = doc.increment();
-  doc.$(id).setDocument(body);
-  // create indices
-  var docIndex = this.db.use(documentName + 'Index', docSubName);
-  traverse(body).map(function(node) {
-    if (typeof node !== 'object' && node !== '') {
-      var subscripts = [];
-      this.path.forEach(function(sub) {
-        if (!isInt(sub)) subscripts.push(sub);
-      });
-      subscripts.push(node);
-      subscripts.push(id);
-      docIndex.$(subscripts).value = id;
-    }
-  });
-  return {
-    ok: true,
-    id: id
+console.log("where will this end up?" + args.req.body.id + "whats back there?");
+
+   finished(test1.call(this, arx_documentName, arx_docSubName, args.req.body, args.req.body.id));
   };
-};

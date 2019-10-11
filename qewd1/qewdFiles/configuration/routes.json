@@ -13,5 +13,25 @@
       "uri": "/api/info",
       "method": "GET",
       "handler": "getInfo"
+    },
+    {
+      "uri": "/api/saveDB",
+      "method": "GET",
+      "handler": "saveDoc"
+    },
+    {
+      "uri": "/api/getDB",
+      "method": "GET",
+      "handler": "getDoc"
+    },
+    {
+      "uri": "/RA/users",
+      "method": "POST",
+      "handler": "users"
+    },
+    {
+      "uri": "/RA/usersinfo/:id",
+      "method": "GET",
+      "handler": "usersinfo"
     }
   ]
