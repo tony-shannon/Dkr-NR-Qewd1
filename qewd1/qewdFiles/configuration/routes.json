@@ -5,6 +5,11 @@
       "handler": "helloworld"
     },
     {
+      "uri": "/api/testing",
+      "method": "GET",
+      "handler": "4tests"
+    },
+    {
       "uri": "/api/info",
       "method": "GET",
       "handler": "getInfo"

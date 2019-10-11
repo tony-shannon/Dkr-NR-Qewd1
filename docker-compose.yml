@@ -13,3 +13,5 @@ services:
     container_name: qewd2
     ports:
       - "3030:8080"
+    volumes:
+      - ./qewd1/qewdFiles:/opt/qewd/mapped
