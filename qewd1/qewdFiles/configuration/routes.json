@@ -33,5 +33,10 @@
       "uri": "/RA/usersinfo/:id",
       "method": "GET",
       "handler": "usersinfo"
+    },
+    {
+      "uri": "/RA/users_info/:id",
+      "method": "GET",
+      "handler": "users_info"
     }
   ]
