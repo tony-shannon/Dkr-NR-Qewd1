@@ -25,18 +25,38 @@
       "handler": "getDoc"
     },
     {
-      "uri": "/RA/users",
-      "method": "POST",
-      "handler": "users"
-    },
-    {
       "uri": "/RA/usersinfo/:id",
       "method": "GET",
       "handler": "usersinfo"
     },
     {
-      "uri": "/RA/users_info/:id",
+      "uri": "/RA/users",
+      "method": "POST",
+      "handler": "users_2post"
+    }, 
+    {
+      "uri": "/RA/users",
       "method": "GET",
-      "handler": "users_info"
-    }
-  ]
+      "handler": "users_get"
+    },
+    {
+      "uri": "/RA/users/:id",
+      "method": "GET",
+      "handler": "users_get"
+    },
+    {
+      "uri": "/RA/posts/:userid",
+      "method": "POST",
+      "handler": "posts_2post"
+    },
+    {
+      "uri": "/RA/posts",
+      "method": "GET",
+      "handler": "posts_get"
+    },
+    {
+      "uri": "/RA/posts/:id",
+      "method": "GET",
+      "handler": "posts_get"
+    }   
+ ]

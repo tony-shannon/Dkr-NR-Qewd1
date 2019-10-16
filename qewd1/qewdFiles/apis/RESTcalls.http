@@ -1,0 +1,66 @@
+http://localhost:3030/api/helloworld
+
+###
+
+http://localhost:3030/api/info
+
+
+### 
+POST http://localhost:3030/RA/users
+content-type: application/json
+
+{
+    "id": 5,
+    "name": "Chelsey Dietrich",
+    "username": "Kamren",
+    "email": "Lucio_Hettinger@annie.ca",
+    "address": {
+      "street": "Skiles Walks",
+      "suite": "Suite 351",
+      "city": "Roscoeview",
+      "zipcode": "33263",
+      "geo": {
+        "lat": "-31.8129",
+        "lng": "62.5342"
+      }
+    },
+    "phone": "(254)954-1289",
+    "website": "demarco.info",
+    "company": {
+      "name": "Keebler LLC",
+      "catchPhrase": "User-centric fault-tolerant solution",
+      "bs": "revolutionize end-to-end systems"
+    }
+  }
+
+###
+
+GET http://localhost:3030/RA/users/66
+
+###
+GET http://localhost:3030/RA/users/2
+
+###
+GET http://localhost:3030/RA/users
+
+
+###
+POST http://localhost:3030/RA/posts/2
+content-type: application/json
+
+{
+    "title": "Ea molestias quasi exercitationem repellat qui ipsa sit aut",
+    "body": "Et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+}
+
+
+###
+GET http://localhost:3030/RA/posts/2
+
+
+###
+GET http://localhost:3030/RA/posts/66
+
+
+###
+GET http://localhost:3030/RA/posts
